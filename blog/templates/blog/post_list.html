@@ -3,18 +3,12 @@
         <title>Blog</title>
     </head>
     <body>
-
-
-        <div>
-            <p>date and time of your first post</p>
-            <h2><a href="">first post</a></h2>
-            <p>content of your first post</p>
-        </div>
-
-        <div>
-            <p>date and time of your second post</p>
-            <h2><a href="">second post</a></h2>
-            <p>content of your second post</p>
-        </div>
+      {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
